@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float m_speed;
-    [SerializeField] private Bezier[] m_routes;
+    private Bezier[] m_routes;
     private int m_routeIndex;
     private float m_tParam;
     private bool m_shouldInvoke;
@@ -25,6 +25,11 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(WalkPath(m_routeIndex));
         }
+    }
+
+    public void SetRoutes(Bezier[] routes)
+    {
+        m_routes = routes;
     }
 
     private IEnumerator WalkPath(int routeIndex)
