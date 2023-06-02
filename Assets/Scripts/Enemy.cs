@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         m_tParam = 0f;
         m_routeIndex++;
 
-        if(m_routeIndex > m_routes.Length)
+        if(m_routeIndex > m_routes.Length - 1)
         {
             m_routeIndex = 0;
         }
